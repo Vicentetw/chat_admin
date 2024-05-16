@@ -1,1 +1,28 @@
+@import '~@angular/material/prebuilt-themes/indigo-pink.css';
 /* You can add global styles to this file, and also import other style files */
+/* Para el primer componente de diálogo */
+
+
+
+.mat-dialog-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  /* Para el segundo componente de diálogo */
+  
+  .search-bar {
+    margin-bottom: 20px;
+  }
+  
+  /* Para el botón de añadir en la tabla */
+  
+  .add-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+  }
+  
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

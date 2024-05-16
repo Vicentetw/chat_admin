@@ -1,1 +1,41 @@
-<p>question-list works!</p>
+<div class="search-bar">
+    <mat-form-field>
+      <input matInput [formControl]="filterControl" placeholder="Search questions">
+    </mat-form-field>
+  </div>
+  
+  
+    <table mat-table [dataSource]="(filteredQuestions$ | async) || []" class="mat-elevation-z8">
+  
+    <ng-container matColumnDef="question">
+      <th mat-header-cell *matHeaderCellDef> Question </th>
+      <td mat-cell *matCellDef="let element"> {{element.question}} </td>
+    </ng-container>
+  
+    <ng-container matColumnDef="answer">
+      <th mat-header-cell *matHeaderCellDef> Answer </th>
+      <td mat-cell *matCellDef="let element"> {{element.answer}} </td>
+    </ng-container>
+  
+    <ng-container matColumnDef="actions">
+      <th mat-header-cell *matHeaderCellDef> Actions </th>
+      <td mat-cell *matCellDef="let element">
+        <button mat-icon-button (click)="openFormDialog(element)">
+          <mat-icon>edit</mat-icon>
+        </button>
+        <button mat-icon-button (click)="deleteQuestion(element.id)">
+          <mat-icon>delete</mat-icon>
+        </button>
+      </td>
+      
+    </ng-container>
+  
+    <tr mat-header-row *matHeaderRowDef="['question', 'answer', 'actions']"></tr>
+    <tr mat-row *matRowDef="let row; columns: ['question', 'answer', 'actions'];"></tr>
+    
+  </table>
+  
+  <button mat-fab color="primary" class="add-button" (click)="openFormDialog()">
+    <mat-icon>add</mat-icon>
+  </button>
+  

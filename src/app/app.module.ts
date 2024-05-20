@@ -14,6 +14,8 @@ import { MatFormFieldModule } from '@angular/material/form-field'; // Agrega Mat
 import { MatSliderModule } from '@angular/material/slider';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDialogModule } from '@angular/material/dialog';
+import { MatPaginator } from '@angular/material/paginator';
+import { MatPaginatorModule } from '@angular/material/paginator';
 import { QuestionService } from './services/question.service';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 
@@ -36,7 +38,9 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
     MatSliderModule,
     MatFormFieldModule, // Agrega MatFormFieldModule
     MatButtonModule,
-    MatDialogModule
+    MatDialogModule,
+    MatPaginator,
+    MatPaginatorModule
   ],
   providers: [
     QuestionService,
